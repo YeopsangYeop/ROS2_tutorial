@@ -18,8 +18,8 @@ class ServiceClient(Node):
         self.req.b = b
         self.req.c = c
         self.future = self.client.call_async(self.req)
-        rclpy.spin_until_future_complete(self, future)
-        return future.result()
+        rclpy.spin_until_future_complete(self, self.future)
+        return self.future.result()
 
 def main(args=None):
     rclpy.init(args=args)
