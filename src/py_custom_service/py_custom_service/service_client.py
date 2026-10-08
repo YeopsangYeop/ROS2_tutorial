@@ -10,7 +10,8 @@ class ServiceClient(Node):
 
         while not self.client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('...')
-            self.req = AddThreeInts.Request()
+            
+        self.req = AddThreeInts.Request()
 
     def send_request(self, a, b, c):
         self.req.a = a
